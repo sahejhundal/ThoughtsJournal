@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <form method="post">
+    <input placeholder="To Follow" name="tofollow">
+    <input placeholder="To UnFollow" name="tounfollow">
+    <input type="submit">
+    </form>
+    {{error}}
+    You are following<br>
+    {% for i in user.following %}
+      {{i.followings}},
+    {% endfor %}
+  </body>
+</html>

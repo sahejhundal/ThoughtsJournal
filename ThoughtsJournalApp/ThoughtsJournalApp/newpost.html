@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+  {% block header %}
+    {{ super() }}
+    <title>Share your thoughts! | ThoughtsJournal</title>
+  {% endblock %}
+  <body>
+    {% block content %}
+      <div align="center">
+      <hr style="height:1pt; visibility:hidden;" />
+        <br><br>
+      <h1>Share your thoughts!</h1><br><br>
+      <div class="main_body_content">
+        <p style="color: red;">{{error}}</p>
+        <div class="mdl-layout mdl-js-layout mdl-color--grey-100">
+          <main class="mdl-layout__content">
+              <form enctype="multipart/form-data" autocomplete="off" method="post">
+                <div class="indented-content">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input name="title" value="{{title}}" class="mdl-textfield__input" style="transition: 0.2s;"
+                      autocomplete="off" type="text" id="username"/>
+                      <label class="mdl-textfield__label" for="username">What's up!</label>
+                  </div>
+                  <br>
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <textarea name="content" class="mdl-textfield__input" type="text" autocomplete="off" id="username">{{content}}</textarea>
+                      <label class="mdl-textfield__label" for="username">Say more about it...</label>
+                  </div>
+                  <br>
+                  <input name="image" type="file">
+                  <br><br>
+                  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+                    <i class="material-icons">add</i>
+                  </button>
+                </div>
+              </form>
+          </main>
+        </div>
+      </div>
+      </div>
+    {% endblock %}
+  </body>
+</html>

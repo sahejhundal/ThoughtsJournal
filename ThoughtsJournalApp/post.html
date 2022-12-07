@@ -1,0 +1,71 @@
+<div id="{{p.key().id()}}" class="post">
+  <div class="post-modal">
+    <div class="modal-content">
+      <span class="close">x</span>
+      <p>Some text in the Modal..</p>
+    </div>
+  </div>
+  <div class="spacecontrol"></div>
+  <div class="created">
+    <a href="/usr/{{p.author}}"><img src="/usr/img/{{p.author}}"></a>
+    <a class="username" href="/usr/{{p.author}}" style="text-decoration: none; color: #333;">{{ p.author }} · </a>
+    <a class="time" href="/p/{{p.key().id()}}" style="text-decoration: none; color: #333;">{{ p.xcreated }}</a>
+    <a class="post-settings" onclick="openModal();"><i class="ion-ios-cog-outline"></i></a>
+  </div>
+  {% if p.title %}
+  <div class="post-heading">
+    <div id="post-title" class="post-title"><a style="line-height: 45px; text-decoration: none; color: #333;" href="/p/{{p.key().id()}}">{{p.title}}</a></div>
+  </div>
+  {% endif %}
+  {% if p.image %}
+  <div align="center" class="post-image">
+    <img src="/p/img/{{p.key().id()}}">
+  </div>
+  {% endif %}
+  <div class="outer-shell">
+    <div class="post-content"><br>
+      <div class="comment">
+      <p>{{p.views}} reads</p>
+      {% if p.content %}
+      <div class="post-comment-author">
+        <a style="color: rgb(255,64,129); text-decoration: none;" href="/usr/{{p.author}}">
+          {{p.author}}
+        </a>
+      </div>
+      <div class="post-comment">
+        {{p._render_text | safe}}<br>
+      </div>
+      {% endif %}
+      </div>
+      {% for i in p.comment %}
+      <div class="comment">
+        <div class="post-comment-author">
+          <a href="usr/{{i.commentor}}">{{i.commentor}}</a>
+        </div>
+        <div class="post-comment">
+          {{ i.comments }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="post-add-comment">
+      <form autocomplete="off" style="display: flex;" onsubmit="Comment($('#{{p.key().id()}}').find('#comment'), {{p.key().id()}})" method="post">
+        <a style="cursor: pointer;" onclick="react('like', {{p.key().id()}})">
+          <div class="like-button">
+            <i class="ion-thumbsup like-button-i"></i></a>
+          </div>
+        </a>
+        <a style="cursor: pointer;" onclick="react('unlike', {{p.key().id()}})">
+          <div class="like-button">
+            <i class="ion-thumbsdown like-button-i"></i></a>
+          </div>
+        </a>
+        <div class="post-add-comment-input">
+          <input autocomplete="off" name='comment' id="comment" placeholder="Write on this..." />
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="spacecontrol"></div>
+</div>
+<br>

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+  {% block header %}
+    {{ super() }}
+    <title>Sign In | ThoughtsJournal</title>
+    <meta name='description' content="ThoughtsJournal is a social media website in which users can discuss their feelings or thoughts on a particular topic.">
+  {% endblock %}
+  <body>
+  {% block navbar %}
+  <div style="display: none;">
+    {{ super() }}
+  </div>
+  {% endblock %}
+  {% block content %}
+    <div class="white-bg" align="center">
+    <br><br><br><br><br>
+    <div class="h1" style="color: 000;">ThoughtsJournal</div>
+      <p class="error">{{error}}</p>
+      {% if user %}
+    <br>
+      <br>
+      <a href="/">
+        <div class="continueas">
+          <p>
+            Continue as <span style="font-family: 'Proxima Nova Bold'">{{user}}</span>
+          </p>
+        </div>
+      </a>
+      <br><br>
+      <a style="text-decoration: none;" href="/signout">
+        <div align="center" class="otheraccount">
+          <p>
+            Switch accounts?
+          </p>
+        </div>
+      </a>
+      {% else %}<br><br>
+        <form autocorrect="off" autocapitalize="off" spellcheck="false" method="post">
+            <input value="{{username}}" name="username" placeholder="Username" class="userinput" type="text" id="username"/><br>
+            <input value="{{password}}" placeholder="Password" name="password" class="userinput" type="password" id="sample1"/>
+          <br>
+          <button type="submit" class="textbutton">
+                Continue
+          </button>
+        </form>
+        <a style="text-decoration: none;" href="/signup">
+        <div align="center" class="otheraccount">
+          <p style="margin-top: 30px;">
+            Don't have an account? Sign up here!
+          </p>
+        </div>
+      </a>
+      {% endif %}
+  {% endblock %}
+  </body>
+</html>

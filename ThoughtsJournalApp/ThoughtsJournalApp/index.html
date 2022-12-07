@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+  {% block header %}
+    {{ super() }}
+    <title>ThoughtsJournal</title>
+    <meta name="description" content="ThoughtsJournal is a social media website in which users can discuss their feelings or thoughts on a particular topic." />
+  {% endblock %}
+  <body>
+  <div>
+    {% block navbar %}
+      {{ super() }}
+    {% endblock %}
+    {% block content %}
+    <div class="overlay">
+      <div class="loader"></div>
+    </div>
+    <br><br>
+    <div class="blog-content">
+    <div class="book">
+        <div align="center" class="error">{{ error }}</div>
+        <div class="start">
+          {% if end %}
+            {{end}}
+          {% else %}
+            Journal
+          {% endif %}
+        </div>
+        {% for post in posts %}
+          {{ post.render() | safe }}
+        {% endfor %}
+        <h1><a style="color: #333;" href="#"><div align="center" class="end">Back to top...</div></a></h1>
+    </div><br><br><br>
+    </div>
+    <br><br>
+    {{ super() }}
+    </div>
+  </body>
+  <!--<div style=" background: rgb(0, 0, 0) ; opacity: 0.6;">&nbsp;</div>-->
+</html>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+  {% block header %}
+    <title>{{user.username}} at ThoughtsJournal</title>
+    <meta name="description" content='ThoughtsJournal | {{user.username}} {{user.name}} "{{user.bio}}"' />
+    {{ super() }}
+  {% endblock %}
+    {% block topbar %}
+    <body>
+      {{ super() }}
+    {% endblock %}
+    {% block navbar %}
+      {{ super() }}
+    {% endblock %}
+    {% block content %}
+    <br><br>
+    <div class="blog-content">
+    <div class="book">
+      <br><br>
+        {{ user.trender() | safe }}
+        <br><br><br><br><br>
+    {% for p in final_posts %}
+    <div id="{{p.key().id()}}" class="post">
+      <div class="spacecontrol"></div>
+      <div class="created">
+        <i style="font-size: 18px; color: #333;" class="ion-clock"> </i>{{ p.xcreated }}
+        <a class="post-settings" onclick="deletePost({{p.key().id()}})"><i class="ion-ios-cog-outline"></i></a>
+      </div>
+      <div class="post-heading">
+        <div id="post-title" class="post-title"><a style="line-height: 45px; text-decoration: none; color: #333;" href="/p/{{p.key().id()}}">{{p.title}}</a></div>
+      </div>
+      {% if p.image %}
+      <div class="post-image">
+        <img align="center" src="/p/img/{{p.key().id()}}">
+      </div>
+      {% endif %}
+      <div class="outer-shell">
+        <div class="post-content"><br>
+          <div class="comment">
+          <p>{{p.views}} reads</p>
+          <div class="post-comment-author">
+            <a style="color: rgb(255,64,129); text-decoration: none;" href="/usr/{{p.author}}">
+              {{p.author}}
+            </a>
+          </div>
+          <div class="post-comment">
+            {{p.content | safe}}<br>
+          </div>
+          </div>
+          {% for i in p.comment %}
+          <div class="comment">
+            <div class="post-comment-author">
+              <a href="usr/{{i.commentor}}">{{i.commentor}}</a>
+            </div>
+            <div class="post-comment">
+              {{ i.comments }}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="post-add-comment">
+          <form autocomplete="off" style="display: flex;" onsubmit="Comment($('#{{p.key().id()}}').find('#comment'), {{p.key().id()}})" method="post">
+            <a style="cursor: pointer;" onclick="like({{p.key().id()}})">
+              <div class="like-button">
+                <i class="ion-thumbsup like-button-i"></i></a>
+              </div>
+            </a>
+            <a style="cursor: pointer;" onclick="like({{p.key().id()}})">
+              <div class="like-button">
+                <i class="ion-thumbsdown like-button-i"></i></a>
+              </div>
+            </a>
+            <a style="cursor: pointer;" onclick="like({{p.key().id()}})">
+              <div class="like-button">
+                <i class="ion-android-favorite-outline like-button-i"></i></a>
+              </div>
+            </a>
+            <div class="post-add-comment-input">
+              <input autocomplete="off" name='comment' id="comment" placeholder="Write on this..." />
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="spacecontrol"></div>
+    </div>
+    <br>
+    {% endfor %}
+  </div>
+  </div>
+  </body>
+</html>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+  {% block header %}
+    {{ super()}}
+    <title>Sign Up | ThoughtsJournal</title>
+    <meta name='description' content="ThoughtsJournal is a social media website in which users can discuss their feelings or thoughts on a particular topic.">
+  {% endblock %}
+  {% block navbar %}
+  <div style="display: none;">
+    {{ super() }}
+  </div>
+  {% endblock %}
+  <body>
+    {% block content %}
+    <div class="white-bg" align="center">
+      <br><br><br><br><br>
+      <div style="color: #000;" class="h1">ThoughtsJournal</div>
+      <p class="error">{{error}}</p>
+      <br>
+      <br>
+      <form autocorrect="off" autocapitalize="off" spellcheck="false" autocomplete="off" method="post">
+          <div class="userform">
+            <input value="{{username}}" name="username" placeholder="Username" class="topinput userinput"><br>
+            <input placeholder="Password" name="password" class="userinput" type="password"/><br>
+            <input value="{{email}}" name="email" placeholder="Email" class="userinput" type="email"/><br>
+            <input value="{{number}}" autocomplete="off" placeholder="Number" name="number" class="bottominput userinput" type="tel"/><br>
+          </div><br>
+          <button type="submit" class="textbutton">
+                Continue
+          </button>
+        </form>
+        <a style="text-decoration: none;" href="/signin">
+          <div align="center" class="otheraccount">
+            <p style="margin-top: 20px;">
+              Already have an account? Login here!
+            </p>
+          </div>
+        </a>
+    </div>
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+  {% block header %}
+    {{ super() }}
+    <title>ThoughtsJournal</title>
+  {% endblock %}
+    {% block navbar %}
+      {{ super() }}
+    {% endblock %}
+    {% block topbar %}
+    <body>
+      {{ super() }}
+    {% endblock %}
+    {% block content %}
+    <div class="blog-content">
+    <div class="book">
+        <div align="center" style="color: red;">{{ error }}</div>
+            <div>
+              <div class="spacecontrol"></div>
+              <div class="post-heading">
+                <div id="post-title" class="post-title"><a style="line-height: 45px; text-decoration: none; color: white;">About</a></div>
+                <div class="mdl-tooltip" for="post-title">
+                  This is the about page!
+                </div>
+                <div class="author"><i>by </i><a style="color: #fff; text-decoration: none;" href="/usr/admin"><i>admin</i></a></div>
+              </div>
+              <div class="outer-shell">
+                <div class="post-content">
+                <p>ThoughtsJournal is a social media website in which users can discuss their feelings or thoughts on a particular topic. We are about to add forums and discussion topics to our sites where users can share their thoughts. Each discussion has its own views and users can reply (comment) to the user that has posted the topic. ThoughtsJournal is not only a discussion forum, it is a social media at the first place. Users can read without logging in, but they need an account to create a topic or commment. We will be adding more features to this, please support us by following my accounts on other social media sites.<br>ThoughtsJournal is created by Sahej Singh Hundal</p>
+                <br>
+                </div>
+              </div>
+              <div class="spacecontrol"></div>
+            </div>
+            <br>
+    </div><br><br><br>
+    </div>
+    </div>
+    {{ super() }}
+    <!--<div style="display: block; position: fixed; z-index: 1000; right: 5px; bottom: 20px;">
+      Support <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <div class="g-plusone" data-href="https://plus.google.com/104338785830217712334/posts"></div>
+    </div>-->
+    
+  </body>
+  <!--<div style=" background: rgb(0, 0, 0) ; opacity: 0.6;">&nbsp;</div>-->
+</html>
+{% endblock %}

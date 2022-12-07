@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://sahej.hundal.me/</loc>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>http://sahej.hundal.me/login</loc>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>http://sahej.hundal.me/register</loc>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>http://sahej.hundal.me/newpost</loc>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>http://sahej.hundal.me/about</loc>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>http://sahej.hundal.me/blog/5757334940811264</loc>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>http://sahej.hundal.me/blog/5685265389584384</loc>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>http://sahej.hundal.me/blog/5724160613416960</loc>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>http://sahej.hundal.me/blog/5649050225344512</loc>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>http://sahej.hundal.me/blog/5741031244955648</loc>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>http://sahej.hundal.me/blog/5668600916475904</loc>
+  <changefreq>always</changefreq>
+</url>
+</urlset>

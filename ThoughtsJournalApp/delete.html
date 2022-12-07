@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+    {% block header %}
+        <div hidden="hidden"> {{ super() }} </div>
+    {% endblock %}
+    {% block content %}
+    <body bgcolor="white">
+        Who should I delete?
+        <!--<form method="post">
+            Type<input name="type">
+            Property<input name="property">
+            Name<input name="name">
+            <input type="submit">
+            <input name="suicide" value="DELETE YOURSELF!">
+        </form>-->
+        <br><br>
+        <div align="center">
+        <form method="post">
+        <button id="show-dialog" type="button" class="mdl-button">Delete</button>
+          <dialog class="mdl-dialog">
+            <h4 class="mdl-dialog__title">Delete your account</h4>
+            <div class="mdl-dialog__content">
+              <p>
+                Are you sure you want to delete your account? This action is irreversible.
+              <p>
+            </div>
+            <div class="mdl-dialog__actions">
+              <button type="submit" class="mdl-button">Delete</button>
+              <button type="button" class="mdl-button close">Cancel</button>
+            </div>
+          </dialog>
+          <script>
+            var dialog = document.querySelector('dialog');
+            var showDialogButton = document.querySelector('#show-dialog');
+            if (! dialog.showModal) {
+              dialogPolyfill.registerDialog(dialog);
+            }
+            showDialogButton.addEventListener('click', function() {
+              dialog.showModal();
+            });
+            dialog.querySelector('.close').addEventListener('click', function() {
+              dialog.close();
+            });
+          </script>
+          </form>
+          </div>
+    </body>
+{% endblock %}

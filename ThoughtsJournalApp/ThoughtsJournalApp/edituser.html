@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+  {% block header %}
+    {{ super() }}
+    <title>ThoughtsJournal | EditMe</title>
+    <meta name="description" content="ThoughtsJournal is a social media website in which users can discuss their feelings or thoughts on a particular topic." />
+  {% endblock %}
+    {% block navbar %}
+      {{ super() }}
+    {% endblock %}
+    {% block topbar %}
+    <body>
+      {{ super() }}
+    {% endblock %}
+    {% block content %}
+    <br><br>
+    <div style="margin-left: 150px;" class="blog-content">
+      <div class="menu">
+      <div class="sidebar">
+        <ul>
+          <li class="sidebar-active">
+            General
+          </li>
+          <li>
+            <a href="/user/editme/security">Password</a>
+          </li>
+        </ul>
+      </div>
+      <form enctype="multipart/form-data" autocomplete="off" method="post">
+        <div class="article">
+          {% if error %}
+          <div class="article-input">
+            <label class="article-input-label"></label>
+            <div class="error article-input-content">{{ error }}</div>
+          </div>
+          {% elif success %}
+          <div class="article-input">
+            <label class="article-input-label"></label>
+            <div class="success article-input-content">{{success}}</div>
+          </div>
+          {% endif %}
+          <br>
+          <div class="article-input">
+            <div class="article-input-label"><input name="image" type="file"></div>
+            <div style="border: none;" class="article-username article-input-content">{{user.username}}</div>
+          </div>
+          <br><br>
+          <div class="article-input">
+            <label for="name" class="article-input-label">Name</label>
+            <input value="{{user.name}}" name="name" class="article-input-content"
+            type="text" id="name" required="required" pattern="[A-Za-z ]{1,20}"/>
+          </div>
+          <br>
+          <div class="article-input">
+            <label for="website" class="article-input-label">Website</label>
+            <input value="{{user.website}}" name="website" class="article-input-content"
+            type="text" id="website"/>
+          </div>
+          <br>
+          <div class="article-input">
+            <label for="bio" class="article-input-label">Bio</label>
+            <textarea name="bio" value="{{bio}}" class="article-textarea-content" type="text" rows= "3" id="bio">{{user.bio}}</textarea>
+          </div>
+          <br>
+          <div class="article-input" style="padding: 0px 10px;">
+            <label class="article-input-label"></label>
+            <div class="article-label article-input-content">Private Info</div>
+          </div>
+          <br>
+          <div class="article-input">
+            <label for="email" class="article-input-label">Email</label>
+            <input value="{{user.email}}" name="email" class="article-input-content"
+            type="text" id="email" minlength="4" required="required"/>
+          </div>
+          <br>
+          <div class="article-input">
+            <label for="number" class="article-input-label">Number</label>
+            <input value="{{user.number}}" class="article-input-content" name="number" type="text"
+            id="number" pattern="-?[0-9]*(\.[0-9]+)?">
+          </div>
+          <br>
+          <div class="article-input">
+            <label for="gender" class="article-input-label">Gender</label>
+            <select value="{{user.gender}}" class="article-input-content article-select" id="gender" name="gender">
+              <option value="none">Not Specified</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <br>
+          <div class="article-input">
+            <label class="article-input-label"></label>
+            <button type="submit" class="borderbutton article-input-content">
+              Submit
+            </button>
+          </div>
+          <br>
+          <br><br>
+        </div>
+        </form>
+      </div>
+    </div><br><br><br>
+    </div>
+  </body>
+    {{ super() }}
+  <!--<div style=" background: rgb(0, 0, 0) ; opacity: 0.6;">&nbsp;</div>-->
+</html>
+{% endblock %}

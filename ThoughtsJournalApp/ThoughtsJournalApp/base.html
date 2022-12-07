@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:z-index="http://www.w3.org/1999/xhtml">
+  {% block header %}
+  <head>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-64216278-2', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <!--<script>
+      function DeletePost(postid){
+        $.ajax('/delete-post', {
+            type: 'POST',
+            data: {
+                postid: postid
+              }
+        });
+      }
+    </script>-->
+    <script src="https://use.typekit.net/moj1sub.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <meta name="google-site-verification" content="jNPoD42VqeUCeN0loHz-be3P9znQaNpxfEY6bnzNL2U" />
+    <link href="stylesheets/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link rel='stylesheet' href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
+    <link rel="icon" type="image/ico" href="/images/favicon.ico"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Helvetica+Neue">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Shadows+Into+Light">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//storage.googleapis.com/code.getmdl.io/1.0.1/material.indigo-pink.min.css">
+    <script src="//storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script type="text/javascript" src="/javascript/main.js"></script>
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no" />
+    <meta name="og:image" content="/images/ThoughtsJournal.png">
+    <meta name="url" content="thoughts-journal.appspot.com/">
+  </head>
+  {% endblock %}
+  {% block navbar %}
+  <div class="nav">
+    <div class="logo">
+      <span class="helper"></span>
+      <a href="/">
+      <img src="/images/bookmark-icon-2.png">
+      </a>
+    </div>
+    <form align="center" class="search" method="post" action="/">
+        <div class="search">
+          <input name="q" type="text" id="search" value="{{search}}" autocomplete="off" placeholder="Search">
+        </div>
+    </form>
+    <div class="openbutton"><button id="demo-menu-lower-right"
+            class="mdl-button mdl-js-button mdl-button--icon openbutton">
+      <i class="ion-ios-more"></i>
+    </button></div>
+    <a href="{{newpostlink}}" class="link">{{newpost}}</a>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+        for="demo-menu-lower-right">
+      <a href="{{accountlink}}"<li class="mdl-menu__item">{{account}}</li></a>
+      <a href="{{trendinglink}}"<li class="mdl-menu__item">{{trending}}</li></a>
+      <a href="{{settingslink}}"<li class="mdl-menu__item">{{settings}}</li></a>
+      <a href="{{logoutlink}}"<li class="mdl-menu__item">{{logout}}</li></a>
+    </ul>
+  </div>
+  {% endblock %}
+  {% block content %}
+  <!--purple blue color rgb(42, 57, 144)-->
+  </div>
+  {% endblock %}
