@@ -1,5 +1,7 @@
 # ThoughtsJournal
 ### A social media web app that allows users to register, create posts, like and comment on other users' posts.
+### Live at (http://thoughts-journal.appspot.com)
+##### (warning: this page sometimes gets blocked for "phishing", in my case I had to use my phone's personal hotspot to access it)
 ##### Developed in Python using Google Web App Engine, AJAX and SQL.
 ##### Libraries used: webapp2, jinja2
 
